@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"
+            defer></script>
+</head>
+<body>
+    <div class="calculator">
+        <div class="mode-selector">
+            <button class="mode-btn active" onclick="setMode('basic')">Basic</button>
+            <button class="mode-btn" onclick="setMode('metric')">Metric</button>
+            <button class="mode-btn" onclick="setMode('currency')">Currency</button>
+        </div>
+
+        <div class="display">
+            <div class="history" id="history"></div>
+            <div class="expression" id="expression"></div>
+            <div class="display-text" id="display">0</div>
+        </div>
+
+        <div class="buttons" id="basicButtons">
+            <button class="btn btn-clear" onclick="clearAll()">C</button>
+            <button class="btn btn-clear" onclick="clearEntry()">CE</button>
+            <button class="btn btn-clear" onclick="deleteLast()">⌫</button>
+            <button class="btn btn-operator" onclick="appendToDisplay('/')">/</button>
+            
+            <button class="btn" onclick="appendToDisplay('7')">7</button>
+            <button class="btn" onclick="appendToDisplay('8')">8</button>
+            <button class="btn" onclick="appendToDisplay('9')">9</button>
+            <button class="btn btn-operator" onclick="appendToDisplay('*')">×</button>
+            
+            <button class="btn" onclick="appendToDisplay('4')">4</button>
+            <button class="btn" onclick="appendToDisplay('5')">5</button>
+            <button class="btn" onclick="appendToDisplay('6')">6</button>
+            <button class="btn btn-operator" onclick="appendToDisplay('-')">-</button>
+            
+            <button class="btn" onclick="appendToDisplay('1')">1</button>
+            <button class="btn" onclick="appendToDisplay('2')">2</button>
+            <button class="btn" onclick="appendToDisplay('3')">3</button>
+            <button class="btn btn-operator" onclick="appendToDisplay('+')">+</button>
+            
+            <button class="btn" onclick="appendToDisplay('(')">(</button>
+            <button class="btn" onclick="appendToDisplay('0')">0</button>
+            <button class="btn" onclick="appendToDisplay(')')">)</button>
+            <button class="btn btn-equals" onclick="calculate()">=</button>
+            
+            <button class="btn btn-wide" onclick="appendToDisplay('.')">.</button>
+            <button class="btn" onclick="appendToDisplay('**')">x²</button>
+            <button class="btn" onclick="appendFunction('sqrt')">√</button>
+        </div>
+
+        <div class="conversion-panel" id="metricPanel">
+            <div class="conversion-row">
+                <input type="number" class="conversion-input" id="metricInput" placeholder="Enter value">
+                <select class="conversion-select" id="metricFromUnit">
+                    <option value="m">Meters</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="km">Kilometers</option>
+                    <option value="in">Inches</option>
+                    <option value="ft">Feet</option>
+                    <option value="yd">Yards</option>
+                    <option value="mi">Miles</option>
+                </select>
+            </div>
+            <div class="conversion-row">
+                <input type="number" class="conversion-input" id="metricOutput" placeholder="Result" readonly>
+                <select class="conversion-select" id="metricToUnit">
+                    <option value="m">Meters</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="km">Kilometers</option>
+                    <option value="in">Inches</option>
+                    <option value="ft">Feet</option>
+                    <option value="yd">Yards</option>
+                    <option value="mi">Miles</option>
+                </select>
+            </div>
+            <div class="metric-buttons">
+                <button class="metric-btn" onclick="setMetricType('length')">Length</button>
+                <button class="metric-btn" onclick="setMetricType('weight')">Weight</button>
+                <button class="metric-btn" onclick="setMetricType('temperature')">Temperature</button>
+                <button class="metric-btn" onclick="setMetricType('area')">Area</button>
+                <button class="metric-btn" onclick="setMetricType('volume')">Volume</button>
+                <button class="metric-btn" onclick="setMetricType('speed')">Speed</button>
+            </div>
+        </div>
+
+        <div class="conversion-panel" id="currencyPanel">
+            <div class="currency-display" id="currencyDisplay">
+                1 USD = Loading...
+            </div>
+            <div class="conversion-row">
+                <input type="number" class="conversion-input" id="currencyInput" placeholder="Enter amount">
+                <select class="conversion-select" id="currencyFrom">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                    <option value="INR">INR</option>
+                    <option value="CAD">CAD</option>
+                    <option value="AUD">AUD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="CNY">CNY</option>
+                </select>
+            </div>
+            <div class="conversion-row">
+                <input type="number" class="conversion-input" id="currencyOutput" placeholder="Result" readonly>
+                <select class="conversion-select" id="currencyTo">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                    <option value="INR">INR</option>
+                    <option value="CAD">CAD</option>
+                    <option value="AUD">AUD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="CNY">CNY</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+  
+</body>
+</html>
