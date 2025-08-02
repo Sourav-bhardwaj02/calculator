@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="./assets/calculator-cover.jpg" alt="Advanced Calculator Screenshot" style="width: 220px; border-radius: 12px;" />
+
 
 *All‑in‑one calculator, metric & currency converter — right in your browser!*
 
