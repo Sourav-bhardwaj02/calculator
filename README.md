@@ -12,7 +12,7 @@
 [![Responsive](https://img.shields.io/badge/Responsive-Mobile%20Friendly-brightgreen?style=flat-square&logo=mobile)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
 </div>
-
+<h2><div align="center" class=""><a href="https://sourav-bhardwaj02.github.io/calculator/"> website </a></div></h2>
 ## ✨ Features
 
 - 🧮 **Basic Math** — add, subtract, multiply, divide, parentheses & power  
